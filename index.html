@@ -1,5 +1,28 @@
 <html>
+  <head>
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
   <body>
-    <h1>Hello Extensions</h1>
+    <h1>Clippy Notes</h1>
+
+    <div class="tab">
+      <button id="take_a_note" class="tablinks" name="form" value="test">Take a Note</button>
+      <button class="tablinks" name="savedNotes">Saved Notes</button>
+    </div>
+
+    <div id="form" class="tabcontent">
+      <form action="/popup.js" method="post">
+        <label>Add a note:</label>
+        <input type="text" name="note" value="">
+        <button class="btn" type="submit" name="save" value="save">Save</button>
+      </form>
+    </div>
+    
+    <div id="savedNotes" class="tabcontent">
+      <h3>Paris</h3>
+      <p>Paris is the capital of France.</p>
+    </div>
+
+    <script src="popup.js"></script>
   </body>
 </html>
