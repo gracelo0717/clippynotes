@@ -33,8 +33,35 @@ function openTab(e) {
 }
 
 // Catch data from submit and display it in the Saved Notes tab.
-document.querySelector('.btn').addEventListener('submit', postNote);
+document.querySelector('.btn').addEventListener('click', postNote);
+
+class Note {
+  constructor() {
+    this.node = document.createElement('div');
+    this.date = new Date().toLocaleDateString();
+    this.url = 'current url';
+    this.note = document.querySelector('textarea').value;
+
+    const noteDate = document.createElement('p');
+    const noteUrl = document.createElement('p');
+    const note = document.createElement('p');
+    const separator = document.createElement('hr');
+    noteDate.innerText = `${this.date}`;
+    noteUrl.innerText = `${this.url}`;
+    note.innerText = `${this.note}`
+    
+    this.node.appendChild(noteDate);
+    this.node.appendChild(noteUrl);
+    this.node.appendChild(note);
+    this.node.appendChild(separator);
+  }
+}
 
 function postNote(content) {
-
+    content.preventDefault();
+    const note = new Note();
+    document.getElementById('savedNotes').appendChild(note.node);
+    document.querySelector('textarea').value = null;
 }
+
+document.querySelector('.form').addEventListener('submit', postNote);
