@@ -1,26 +1,51 @@
 <html>
   <head>
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Changa:wght@200..800&family=Poetsen+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Changa:wght@200..800&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Clippy Notes</h1>
-
-    <div class="tab">
-      <button id="take_a_note" class="tablinks" name="form" value="test">Take a Note</button>
-      <button class="tablinks" name="savedNotes">Saved Notes</button>
+    <div class="title-container">
+      <h1>Clippy Notes</h1>
     </div>
 
-    <div id="form" class="tabcontent">
-      <form action="/popup.js" method="post">
-        <label>Add a note:</label>
-        <input type="text" name="note" value="">
-        <button class="btn" type="submit" name="save" value="save">Save</button>
-      </form>
+    <div class="main-container">
+      <!--TABS-->
+      <div class="tabs-container">
+        <button id="take_a_note" class="tablinks tab1" name="form" value="test">Take a Note</button>
+        <button class="tablinks tab2" name="savedNotes">Saved Notes</button>
+      </div>
+
+      <!--CONTENT-->
+      <div class="content-container">
+        <div id="form" class="tabcontent">
+          <form action="/popup.js" method="post">
+            <label>Add a note:</label>
+            <textarea type="text" name="note" rows="5" value=""></textarea>
+            <button class="btn" type="submit" name="save" value="save">Save</button>
+          </form>
+        </div>
+        
+        <div id="savedNotes" class="tabcontent">
+          <p>5/23/2024</p>
+          <p>URL: https://codesmith.io</p>
+          <p class="note">Check with my software engineering friend if the immersive program is right for me. Seems like a good option!</p>
+          <hr>
+          <p>5/23/2024</p>
+          <p>URL: https://codesmith.io</p>
+          <p class="note">Check with my software engineering friend if the immersive program is right for me. Seems like a good option!</p>
+        </div>
+      </div>
+
     </div>
-    
-    <div id="savedNotes" class="tabcontent">
-      <h3>Paris</h3>
-      <p>Paris is the capital of France.</p>
+
+    <!--CLIPPY-->
+    <div class="clippy-container">
+      <img src="/assets/petclippy.png" alt="" class="clippy" />
     </div>
 
     <script src="popup.js"></script>

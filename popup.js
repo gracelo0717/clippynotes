@@ -12,8 +12,8 @@ for (i = 0; i < tabcontent.length; i++) {
   tabcontent[i].style.display = "none";
 }
 
-// Clicking on the from tab so that it displays from the beginning
-document.getElementById("form").click();
+// Clicking on the form tab so that it displays from the beginning
+document.getElementById("take_a_note").click();
 
 function openTab(e) {
   // Hide both tabs
@@ -27,7 +27,7 @@ function openTab(e) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
 	
-  // Making sure clicked on tab is displaying with a class of active
+  // Making sure clicked on tab is displaying and has a class of active
   document.querySelector(`#${e.currentTarget.name}`).style.display = "block";
   e.currentTarget.className += " active";
 }
