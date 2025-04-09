@@ -1,10 +1,11 @@
 {
-    "name": "Note Extension",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 3,
-    "action": {
-      "default_popup": "index.html",
-      "default_icon": "assets/clippy.png"
-    }
+  "name": "Clippy Notes",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["tabs"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "assets/clippy.png"
   }
+}
